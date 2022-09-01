@@ -42,6 +42,7 @@ module.exports = (env, argv) => {
 
   const addDefinePlugin = () => {
     const instance = new WP.DefinePlugin({
+        APPTYPE:JSON.stringify("react"),
       __IS_DEV__: isDev,
       __APP_NAME__: APP_NAME
     });
@@ -54,7 +55,7 @@ module.exports = (env, argv) => {
       ...MF_CONFIG,
       filename: 'remoteEntry.js',
       shared: {
-        ...PACKAGE_JSON.dependencies,
+        // ...PACKAGE_JSON.dependencies,
         'react': {
           eager:true,
           requiredVersion: PACKAGE_JSON.dependencies['react'],
@@ -101,7 +102,7 @@ module.exports = (env, argv) => {
     output: {
       path: path.join(__dirname, '/dist'),
       filename: '[name]-[hash].js',
-      // publicPath:'',
+      publicPath:'auto',
       library: APP_NAME
     },
  

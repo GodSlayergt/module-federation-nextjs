@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import ReactDOMServer from 'react-dom/server';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Routes } from 'react-router';
 
 
 
@@ -11,20 +12,17 @@ const render = (app)=>{
 
   
 ReactDOM.render(
-
-  <App heading="Test" count={0}/>
+<BrowserRouter>
+<Routes>
+  <Route href="/"> <App heading="Test" count={0}/></Route>
+</Routes>
+  </BrowserRouter>
 ,
 document.getElementById(app)
 );
 
 }
 
-// ReactDOM.render(
-
-//   <App heading="Test" count={0}/>
-// ,
-// document.getElementById("container")
-// );
 
 export default render
 

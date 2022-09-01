@@ -1,8 +1,9 @@
 import Load from "../../loader";
 import Link from "next/link";
 import { useState } from "react";
+import LoadRemoteComponent from "../../loader";
 
-const Component2 = Load("remote2","pagination")
+// const Component2 = Load("remote2","pagination")
 
 
 export default function Home({ data }) {
@@ -10,11 +11,9 @@ export default function Home({ data }) {
   return (
     <div>
       Next
-      <div id="container"></div>
-      <Link href="/test"><a>widget</a></Link>
-      <div>
-      <Component2/>
-      <button onClick={()=>setCount(count+1)}>changestate{count}</button>
+      <div id="container">
+       <LoadRemoteComponent  url="http://localhost:4000/remoteEntry.js" scope="remote1" module="./widget"/>
+       <LoadRemoteComponent  url="http://localhost:4001/remoteEntry.js" scope="remote2" module="./pagination"/>
       </div>
     </div>
   );

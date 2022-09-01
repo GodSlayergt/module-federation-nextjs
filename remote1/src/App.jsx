@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import   './App.css'
 function App({heading,count}) {
   const[counter,setCount] = useState(count||0)
+
+  
+    
   const press = ()=>{
     setCount(counter+1)
+    window.dispatchEvent(new CustomEvent("route"),{detail:{url:"/"}})
   }
   return (
     <div className="widget">

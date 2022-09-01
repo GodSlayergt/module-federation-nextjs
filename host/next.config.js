@@ -12,13 +12,13 @@ module.exports = withBundleAnalyzer(
     distDir: "build",
     assetPrefix: isAssetPrefix,
     basePath: isAssetPrefix,
-    env: {
-      BASE_PATH: isAssetPrefix,
-      remotes:{
-        "remote1":"http://localhost:4000/remoteEntry.js",
-        "remote2":"http://localhost:4001/remoteEntry.js"
-      }
-    },
+    // env: {
+    //   BASE_PATH: isAssetPrefix,
+    //   remotes:{
+    //     "remote1":"http://localhost:4000/remoteEntry.js",
+    //     // "remote2":"http://localhost:4001/remoteEntry.js"
+    //   }
+    // },
 
 
   
@@ -42,7 +42,7 @@ module.exports = withBundleAnalyzer(
               eager: true,
               requiredVersion: PACKAGE_JSON.dependencies["react-dom"],
               singleton: true,
-            },
+            }
           },
         })
       );

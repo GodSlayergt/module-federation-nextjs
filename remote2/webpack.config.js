@@ -25,7 +25,7 @@ const MF_CONFIG = {
   name: `${APP_NAME}`,
   remotes: {},
   exposes: {
-    'pagination': './src/App.js'
+    './pagination': './src/App.js'
   }
 };
 
